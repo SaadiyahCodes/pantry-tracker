@@ -16,14 +16,13 @@ export const metadata = {
 const Header = () => (
   <Box
     component="header" sx={{
-      bgcolor: 'f9f9f9', padding: '1rem',
+      bgcolor: 'background.paper', padding: '0.75rem',
       textAlign: 'start', paddingLeft: '3rem',
       top:0, width: '100%'
     }}
   >
     <Typography variant="h6" sx={{
-      color: 'black', fontWeight: 'bold',
-      fontFamily: 'Poppins, sans-serif', fontSize: '1.5rem'
+      color: 'text.primary', fontWeight: 'bold', fontSize: '1.5rem'
     }}>
       Pantry Tracker
     </Typography>
@@ -31,7 +30,7 @@ const Header = () => (
 )
 
 const Footer = () => (
-  <Box component="footer" sx={{p:2, textAlign:'center', bgcolor:'#f5f5f5'}}>
+  <Box component="footer" sx={{p:2, textAlign:'center', bgcolor:'background.default'}}>
     <Typography variant="body2">
     &copy; 2024 Pantry Tracker. All rights reserved.
     </Typography>
@@ -41,10 +40,12 @@ const Footer = () => (
 export default function RootLayout({children}) {
   return (
     <html lang="en">
-      <body className="{poppins.className}">
+      <body className="{poppins.className}" style={{
+        display: 'flex', flexDirection: 'column', minHeight: '100vh'
+      }}>
         <ThemeProviderComponent>
           <Header/>
-            <main>{children}</main>
+          <Box component="main" sx={{flex: '1 0 auto'}}>{children}</Box>
           <Footer/>
         </ThemeProviderComponent>
       </body>
