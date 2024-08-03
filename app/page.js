@@ -176,7 +176,7 @@ export default function Home() {
             </TableHead>
             <TableBody>
               {filteredInventory.map(({name, quantity}) => (
-                  <TableRow>
+                  <TableRow key={name}>
                     <TableCell sx={tableCellStyle.body}>
                       {name.charAt(0).toUpperCase() + name.slice(1)}
                     </TableCell>
