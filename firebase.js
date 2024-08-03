@@ -19,7 +19,20 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+let analytics;
+
+if (typeof window !== "undefined") {
+  // Import and initialize Firebase Analytics only in the browser
+  import("firebase/analytics").then(({ getAnalytics, isSupported }) => {
+    isSupported().then((supported) => {
+      if (supported) {
+        analytics = getAnalytics(app);
+      }
+    });
+  });
+}
+
 const firestore = getFirestore(app);
 
 export {firestore}
