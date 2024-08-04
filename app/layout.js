@@ -1,5 +1,5 @@
 import { Poppins } from "next/font/google";
-import { AppBar, Toolbar, Container, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import ThemeProviderComponent from "./ThemeProvider";
 import "./globals.css";
 
@@ -40,7 +40,7 @@ const Footer = () => (
 export default function RootLayout({children}) {
   return (
     <html lang="en">
-      <body className="{poppins.className}" style={{
+      <body className={poppins.className} style={{
         display: 'flex', flexDirection: 'column', minHeight: '100vh'
       }}>
         <ThemeProviderComponent>

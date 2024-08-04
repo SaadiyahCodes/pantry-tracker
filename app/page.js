@@ -2,7 +2,7 @@
 import { firestore } from "@/firebase"
 import { useState, useEffect } from "react"
 import { getDocs, deleteDoc, doc, getDoc, collection, setDoc, query } from "firebase/firestore"
-import { Box, Container, Modal, Typography, Stack, TextField, Button, TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, IconButton, responsiveFontSizes } from "@mui/material"
+import { Box, Container, Modal, Typography, Stack, TextField, Button, TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, IconButton } from "@mui/material"
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import EditIcon from '@mui/icons-material/Edit';
